@@ -8,6 +8,7 @@ export interface Pixels {
 	readonly width: number
 	readonly height: number
 	readonly data: Uint8Array | Uint8ClampedArray
+	readonly premultiplied?: boolean
 }
 
 export class HTMLImageElement extends EventTarget {
@@ -36,12 +37,17 @@ export class ImageBitmap {
 	readonly width: number
 	readonly height: number
 	readonly data: Uint8Array | null
+	readonly premultiplied: boolean
 	close (): void
 }
 
 export interface ImageBitmapOptions {
 	imageOrientation?: 'from-image' | 'flipY' | 'none'
 	premultiplyAlpha?: 'default' | 'premultiply' | 'none'
+	colorSpaceConversion?: 'default' | 'none'
+	resizeWidth?: number
+	resizeHeight?: number
+	resizeQuality?: 'pixelated' | 'low' | 'medium' | 'high'
 }
 
 export type ImageBitmapSource = Blob | HTMLImageElement | ImageBitmap | Pixels

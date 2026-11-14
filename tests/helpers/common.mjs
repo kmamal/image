@@ -33,3 +33,7 @@ export const translucentPng = () => sharp({
 export const cmykJpeg = () => sharp({
 	create: { width: 4, height: 4, channels: 3, background: { r: 255, g: 0, b: 0 } },
 }).toColourspace('cmyk').jpeg().toBuffer()
+
+export const displayP3Png = () => sharp({
+	create: { width: 2, height: 2, channels: 3, background: { r: 200, g: 100, b: 50 } },
+}).withIccProfile('p3').png().toBuffer()
