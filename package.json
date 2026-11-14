@@ -1,0 +1,40 @@
+{
+  "version": "0.0.1",
+  "name": "@kmamal/image",
+  "description": "HTMLImageElement, ImageBitmap and createImageBitmap for Node.js",
+  "keywords": [
+    "image",
+    "HTMLImageElement",
+    "ImageBitmap",
+    "createImageBitmap",
+    "png",
+    "jpeg",
+    "webp",
+    "sharp"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kmamal/image.git"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "npx @kmamal/testing"
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@kmamal/testing": "0.0.34"
+  }
+}
